@@ -509,6 +509,7 @@ p {
 }
 
 .testimonial-card figcaption {
+  margin-bottom: 8px;
   color: var(--blue);
   font-weight: 700;
   font-size: 0.85rem;

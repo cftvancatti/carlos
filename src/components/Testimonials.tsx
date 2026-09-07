@@ -8,11 +8,11 @@ export function Testimonials() {
       perViewDesktop={3}
       items={TESTIMONIALS.map((testimonial) => (
         <figure className="testimonial-card" key={testimonial.name}>
+          <figcaption>{testimonial.name}</figcaption>
           <div className="stars" aria-label="Avaliação 5 estrelas">
             ★★★★★
           </div>
           <blockquote>{testimonial.text}</blockquote>
-          <figcaption>{testimonial.name}</figcaption>
         </figure>
       ))}
     />
