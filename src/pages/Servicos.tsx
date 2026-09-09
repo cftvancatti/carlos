@@ -1,8 +1,31 @@
-import { ADVANTAGES, APPLICATIONS, SERVICES, WHATSAPP_URL, ADSENSE_SLOTS } from '../data';
+import { useEffect, useState } from 'react';
+import { ADVANTAGES, APPLICATIONS, SERVICES, WHATSAPP_URL, ADSENSE_SLOTS, type Service } from '../data';
 import { Carousel } from '../components/Carousel';
 import { AdBanner } from '../components/AdBanner';
+import { fetchServices, type ServiceRow } from '../supabase';
 
 export function Servicos() {
+  const [services, setServices] = useState<Service[] | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetchServices().then((rows) => {
+      if (!rows || cancelled) return;
+      setServices(
+        rows.map((row: ServiceRow) => ({
+          number: row.number,
+          title: row.title,
+          description: row.description,
+        })),
+      );
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const lista = services ?? SERVICES;
+
   return (
     <>
       <section className="page-hero">
@@ -26,7 +49,7 @@ export function Servicos() {
             className="carousel-services"
             label="Serviços"
             perViewDesktop={4}
-            items={SERVICES.map((service) => (
+            items={lista.map((service) => (
               <article className="service-card" key={service.number}>
                 <span className="service-number">{service.number}</span>
                 <h3>{service.title}</h3>

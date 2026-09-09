@@ -20,6 +20,13 @@ export const ADSENSE_SLOTS = {
 // Chave usada para registrar o aceite da Política de Privacidade no navegador.
 export const POLICY_ACCEPT_KEY = 'politica-privacidade-aceita';
 
+// ---------- Banco de dados (Supabase) ----------
+// Configuração pública (publishable key): permitida em código-fonte.
+// Nunca colocar aqui chaves secretas de servidor (service_role).
+export const SUPABASE_URL = 'https://supabase-api-prod.verdent.ai/p/pac5ff18b37d84d65c9e1';
+export const SUPABASE_PUBLISHABLE_KEY =
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoyMTA0NTQ0NTIwLCJpYXQiOjE3ODg5MjUzMjAsImlzcyI6InN1cGFiYXNlIiwicHJvamVjdF9yZWYiOiJwYWM1ZmYxOGIzN2Q4NGQ2NWM5ZTEiLCJyb2xlIjoiYW5vbiJ9.wjj7otNmxBnK7_e6MKNdzRKAqVfcES7EALH2tWDZM0M';
+
 export interface Service {
   number: string;
   title: string;
