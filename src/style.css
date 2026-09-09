@@ -1115,8 +1115,25 @@ p {
 
 .login-modal .policy-close {
   position: absolute;
-  top: 14px;
-  right: 14px;
+  top: 12px;
+  right: 12px;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--navy);
+  background: rgb(20 36 61 / 8%);
+  cursor: pointer;
+}
+
+.login-modal .policy-close:hover {
+  background: rgb(20 36 61 / 18%);
 }
 
 .admin-container {
