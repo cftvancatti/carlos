@@ -1,5 +1,6 @@
-import { ADVANTAGES, APPLICATIONS, SERVICES, WHATSAPP_URL } from '../data';
+import { ADVANTAGES, APPLICATIONS, SERVICES, WHATSAPP_URL, ADSENSE_SLOTS } from '../data';
 import { Carousel } from '../components/Carousel';
+import { AdBanner } from '../components/AdBanner';
 
 export function Servicos() {
   return (
@@ -131,6 +132,10 @@ export function Servicos() {
           </div>
         </div>
       </section>
+
+      <div className="container">
+        <AdBanner slot={ADSENSE_SLOTS.footer} label="Publicidade" />
+      </div>
     </>
   );
 }

@@ -3,6 +3,23 @@ export const PHONE_DISPLAY = '(21) 97187-6996';
 export const INSTAGRAM_URL = 'https://www.instagram.com/carlosinstalador/';
 export const FACEBOOK_URL = 'https://www.facebook.com/profile.php?id=100063594761298';
 
+// ---------- Monetização (Google AdSense) ----------
+// Para ATIVAR os anúncios, cole o seu ID do AdSense abaixo
+// (ex.: 'ca-pub-1234567890123456'). Enquanto estiver vazio,
+// nenhum script de anúncios é carregado e o site fica inalterado.
+export const ADSENSE_CLIENT = '';
+
+// IDs dos blocos de anúncio criados no painel do AdSense (data-ad-slot).
+// Preencha apenas os que você criar; os demais ficam desligados.
+export const ADSENSE_SLOTS = {
+  hero: '', // banner logo abaixo do hero da página inicial
+  mid: '', // banner no meio do conteúdo (entre seções)
+  footer: '', // banner logo acima do rodapé
+} as const;
+
+// Chave usada para registrar o aceite da Política de Privacidade no navegador.
+export const POLICY_ACCEPT_KEY = 'politica-privacidade-aceita';
+
 export interface Service {
   number: string;
   title: string;

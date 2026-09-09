@@ -3,8 +3,10 @@ import {
   ROTATING_WORDS,
   WHATSAPP_URL,
   INSTAGRAM_URL,
+  ADSENSE_SLOTS,
 } from '../data';
 import { Testimonials } from '../components/Testimonials';
+import { AdBanner } from '../components/AdBanner';
 
 export function Home() {
   const [wordIndex, setWordIndex] = useState(0);
@@ -47,6 +49,10 @@ export function Home() {
         </div>
       </section>
 
+      <div className="container">
+        <AdBanner slot={ADSENSE_SLOTS.hero} label="Publicidade" />
+      </div>
+
       <section className="section section-alt" id="sobre">
         <div className="container about-grid">
           <div className="about-media">
@@ -84,6 +90,10 @@ export function Home() {
           </div>
         </div>
       </section>
+
+      <div className="container">
+        <AdBanner slot={ADSENSE_SLOTS.mid} label="Publicidade" />
+      </div>
 
       <section className="section" id="depoimentos">
         <div className="container">

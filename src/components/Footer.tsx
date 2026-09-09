@@ -1,8 +1,6 @@
 import { useState } from 'react';
-import { WHATSAPP_URL, INSTAGRAM_URL } from '../data';
+import { WHATSAPP_URL, INSTAGRAM_URL, POLICY_ACCEPT_KEY } from '../data';
 import { PrivacidadeTexto } from './PrivacidadeTexto';
-
-const POLICY_ACCEPT_KEY = 'politica-privacidade-aceita';
 
 function jaAceitou(): boolean {
   try {
