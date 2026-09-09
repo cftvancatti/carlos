@@ -4,8 +4,16 @@ import { PrivacidadeTexto } from './PrivacidadeTexto';
 
 const POLICY_ACCEPT_KEY = 'politica-privacidade-aceita';
 
+function jaAceitou(): boolean {
+  try {
+    return localStorage.getItem(POLICY_ACCEPT_KEY) !== null;
+  } catch {
+    return false;
+  }
+}
+
 export function Footer() {
-  const [policyOpen, setPolicyOpen] = useState(false);
+  const [policyOpen, setPolicyOpen] = useState(!jaAceitou());
 
   const aceitarTermos = () => {
     try {
