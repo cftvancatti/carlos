@@ -4,12 +4,12 @@
   --blue: #1a497e;
   --blue-bright: #2e7fd6;
   --green: #25d366;
-  --bg: #eef2f8;
-  --surface: #f9fafc;
+  --bg: #eaedf1;
+  --surface: #f4f5f7;
   --text: #1f2937;
   --heading: #0b1f3a;
   --muted: #5b6b80;
-  --border: #dde5ef;
+  --border: #dadfe6;
   --radius: 16px;
   --shadow: 0 16px 40px rgb(11 31 58 / 8%);
   color: var(--text);
@@ -121,7 +121,7 @@ p {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgb(249 250 252 / 92%);
+  background: rgb(244 245 247 / 92%);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
 }
@@ -235,7 +235,7 @@ p {
   padding: 8px;
   border: 1px solid var(--border);
   border-radius: 10px;
-  background: #f9fafc;
+  background: #f4f5f7;
   cursor: pointer;
 }
 
@@ -331,7 +331,7 @@ p {
 }
 
 .section-alt {
-  background: linear-gradient(180deg, #e6ecf5 0%, var(--bg) 100%);
+  background: linear-gradient(180deg, #e2e6ec 0%, var(--bg) 100%);
 }
 
 .section-head {
@@ -469,7 +469,7 @@ p {
   height: 42px;
   border: 1px solid var(--border);
   border-radius: 999px;
-  background: #f9fafc;
+  background: #f4f5f7;
   color: var(--blue);
   font-size: 1.5rem;
   font-weight: 700;
@@ -649,7 +649,7 @@ p {
   max-height: min(82vh, 720px);
   border-radius: 20px;
   color: #1c2a45;
-  background: rgb(249 250 252 / 96%);
+  background: rgb(244 245 247 / 96%);
   backdrop-filter: blur(8px);
   box-shadow: 0 24px 64px rgb(10 18 32 / 35%);
   overflow: hidden;
@@ -743,7 +743,7 @@ p {
   gap: 16px;
   padding: clamp(20px, 3vw, 32px);
   border-radius: 18px;
-  background: #f9fafc;
+  background: #f4f5f7;
   box-shadow: var(--shadow);
 }
 
@@ -1040,7 +1040,7 @@ p {
     align-items: stretch;
     gap: 4px;
     padding: 16px 20px 20px;
-    background: #f9fafc;
+    background: #f4f5f7;
     border-bottom: 1px solid var(--border);
     box-shadow: 0 20px 30px rgb(11 31 58 / 12%);
     display: none;
@@ -1102,7 +1102,7 @@ p {
   width: min(440px, 100%);
   padding: clamp(28px, 5vw, 40px);
   border-radius: 24px;
-  background: #f9fafc;
+  background: #f4f5f7;
   box-shadow: 0 24px 64px rgb(10 18 32 / 35%);
   overflow: hidden;
 }
@@ -1178,7 +1178,7 @@ p {
   padding: 12px 14px;
   border: 1px solid var(--border);
   border-radius: 10px;
-  background: #fdfdfe;
+  background: #f9fafb;
   color: var(--text);
   font-size: 1rem;
   font-family: inherit;
