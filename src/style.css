@@ -205,6 +205,28 @@ p {
   white-space: nowrap;
 }
 
+.nav-login {
+  padding: 8px 18px;
+  border: 2px solid var(--blue);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--blue);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.nav-login:hover {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #fff;
+}
+
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -1071,6 +1093,31 @@ p {
 }
 
 /* ---------- Admin (login + orçamentos) ---------- */
+
+.login-modal {
+  position: relative;
+  width: min(440px, 100%);
+  padding: clamp(28px, 5vw, 40px);
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 24px 64px rgb(10 18 32 / 35%);
+  overflow: hidden;
+}
+
+.login-modal h2 {
+  margin-bottom: 0.3em;
+  font-size: clamp(1.3rem, 3vw, 1.6rem);
+}
+
+.login-modal p {
+  margin-bottom: 20px;
+}
+
+.login-modal .policy-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+}
 
 .admin-container {
   display: flex;

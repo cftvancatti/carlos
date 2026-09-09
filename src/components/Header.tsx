@@ -1,5 +1,7 @@
 import { useEffect, useState, type MouseEvent } from 'react';
 import { PHONE_DISPLAY, WHATSAPP_URL } from '../data';
+import { getAdminSession } from '../supabase';
+import { LoginModal } from './LoginModal';
 
 interface HeaderProps {
   route: string;
@@ -8,6 +10,7 @@ interface HeaderProps {
 
 export function Header({ route, onNavigate }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [loginOpen, setLoginOpen] = useState(false);
 
   useEffect(() => {
     setMenuOpen(false);
@@ -16,6 +19,16 @@ export function Header({ route, onNavigate }: HeaderProps) {
   const go = (target: string) => (e: MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     onNavigate(target);
+  };
+
+  const abrirLogin = () => {
+    setMenuOpen(false);
+    // Se já estiver logado, vai direto para o painel.
+    if (getAdminSession()) {
+      onNavigate('#/admin');
+      return;
+    }
+    setLoginOpen(true);
   };
 
   return (
@@ -44,6 +57,9 @@ export function Header({ route, onNavigate }: HeaderProps) {
           >
             Serviços
           </a>
+          <button type="button" className="nav-login" onClick={abrirLogin}>
+            Login
+          </button>
           <a
             href={WHATSAPP_URL}
             className="btn btn-primary btn-sm nav-cta"
@@ -53,6 +69,16 @@ export function Header({ route, onNavigate }: HeaderProps) {
             Contratar agora !
           </a>
         </nav>
+
+        {loginOpen && (
+          <LoginModal
+            onClose={() => setLoginOpen(false)}
+            onSuccess={() => {
+              setLoginOpen(false);
+              onNavigate('#/admin');
+            }}
+          />
+        )}
 
         <button
           className="menu-toggle"

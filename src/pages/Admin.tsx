@@ -1,12 +1,12 @@
-import { useCallback, useEffect, useState, type FormEvent } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import {
-  adminSignIn,
   fetchLeads,
   getAdminSession,
   setAdminSession,
   type AdminSession,
   type LeadRow,
 } from '../supabase';
+import { AdminLoginForm } from '../components/AdminLoginForm';
 
 type LoadState = 'carregando' | 'ok' | 'erro';
 
@@ -26,10 +26,6 @@ function formatarData(iso: string): string {
 
 export function Admin() {
   const [session, setSession] = useState<AdminSession | null>(() => getAdminSession());
-  const [email, setEmail] = useState('');
-  const [senha, setSenha] = useState('');
-  const [entrando, setEntrando] = useState(false);
-  const [loginErro, setLoginErro] = useState(false);
 
   const [leads, setLeads] = useState<LeadRow[]>([]);
   const [estado, setEstado] = useState<LoadState>('carregando');
@@ -52,23 +48,6 @@ export function Admin() {
     if (session) void carregar(session.access_token);
   }, [session, carregar]);
 
-  const entrar = async (event: FormEvent) => {
-    event.preventDefault();
-    if (entrando) return;
-    setEntrando(true);
-    setLoginErro(false);
-
-    const novaSessao = await adminSignIn(email.trim(), senha);
-    if (novaSessao) {
-      setAdminSession(novaSessao);
-      setSession(novaSessao);
-      setSenha('');
-    } else {
-      setLoginErro(true);
-    }
-    setEntrando(false);
-  };
-
   const sair = () => {
     setAdminSession(null);
     setSession(null);
@@ -87,46 +66,12 @@ export function Admin() {
     return (
       <section className="section admin-section">
         <div className="container admin-container">
-          <form className="admin-login" onSubmit={entrar}>
+          <div className="admin-login">
             <span className="eyebrow">Área restrita</span>
             <h1>Login do administrador</h1>
             <p>Acesse para ver todos os orçamentos recebidos pelo site.</p>
-
-            <div className="admin-field">
-              <label htmlFor="admin-email">E-mail</label>
-              <input
-                id="admin-email"
-                type="email"
-                required
-                autoComplete="username"
-                placeholder="admin@carlosinstalador.com"
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
-              />
-            </div>
-            <div className="admin-field">
-              <label htmlFor="admin-senha">Senha</label>
-              <input
-                id="admin-senha"
-                type="password"
-                required
-                autoComplete="current-password"
-                placeholder="Sua senha"
-                value={senha}
-                onChange={(event) => setSenha(event.target.value)}
-              />
-            </div>
-
-            <button type="submit" className="btn btn-primary" disabled={entrando}>
-              {entrando ? 'Entrando...' : 'Entrar'}
-            </button>
-
-            {loginErro && (
-              <p className="admin-erro" role="alert">
-                E-mail ou senha inválidos. Tente novamente.
-              </p>
-            )}
-          </form>
+            <AdminLoginForm onSuccess={setSession} />
+          </div>
         </div>
       </section>
     );
