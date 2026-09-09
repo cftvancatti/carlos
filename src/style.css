@@ -7,6 +7,7 @@
   --bg: #f5f8fc;
   --surface: #ffffff;
   --text: #1f2937;
+  --heading: #0b1f3a;
   --muted: #5b6b80;
   --border: #dfe6f0;
   --radius: 16px;
@@ -42,7 +43,7 @@ h2,
 h3 {
   margin: 0 0 0.6em;
   line-height: 1.15;
-  color: var(--navy);
+  color: var(--heading);
   font-weight: 800;
 }
 
@@ -165,7 +166,7 @@ p {
 .brand-text {
   display: flex;
   flex-direction: column;
-  color: var(--navy);
+  color: var(--heading);
   font-weight: 800;
   font-size: 1.05rem;
   line-height: 1.2;
@@ -242,7 +243,7 @@ p {
   width: 22px;
   height: 2px;
   border-radius: 2px;
-  background: var(--navy);
+  background: var(--heading);
 }
 
 /* ---------- Hero ---------- */
@@ -418,7 +419,7 @@ p {
   border-left: 4px solid var(--blue-bright);
   border-radius: 0 12px 12px 0;
   background: rgb(46 127 214 / 8%);
-  color: var(--navy);
+  color: var(--heading);
   font-style: italic;
 }
 
@@ -608,7 +609,7 @@ p {
   margin-top: 2rem;
   margin-bottom: 0.5rem;
   font-size: 1.3rem;
-  color: var(--navy);
+  color: var(--heading);
 }
 
 .policy-content ul {
@@ -676,7 +677,7 @@ p {
 .policy-modal-head h2 {
   margin: 0;
   font-size: 1.25rem;
-  color: var(--navy);
+  color: var(--heading);
 }
 
 .policy-close {
@@ -688,7 +689,7 @@ p {
   border-radius: 50%;
   font-size: 1.5rem;
   line-height: 1;
-  color: var(--navy);
+  color: var(--heading);
   background: rgb(20 36 61 / 8%);
   cursor: pointer;
 }
@@ -761,7 +762,7 @@ p {
 .quote-form-field label {
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--navy);
+  color: var(--heading);
 }
 
 .quote-form-field input,
@@ -1129,7 +1130,7 @@ p {
   font-size: 1.05rem;
   font-weight: 700;
   line-height: 1;
-  color: var(--navy);
+  color: var(--heading);
   background: rgb(20 36 61 / 8%);
   cursor: pointer;
 }
@@ -1170,7 +1171,7 @@ p {
 .admin-field label {
   font-weight: 700;
   font-size: 0.9rem;
-  color: var(--navy);
+  color: var(--heading);
 }
 
 .admin-field input {
@@ -1289,7 +1290,7 @@ p {
 
 .admin-lead-name {
   font-weight: 700;
-  color: var(--navy);
+  color: var(--heading);
   white-space: nowrap;
 }
 
@@ -1301,4 +1302,169 @@ p {
 .admin-lead-data {
   color: var(--muted);
   white-space: nowrap;
+}
+
+/* ---------- Botão de tema (claro/escuro) ---------- */
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 2px solid var(--border);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--heading);
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--blue-bright);
+  color: var(--blue-bright);
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---------- Modo escuro ---------- */
+
+[data-theme='dark'] {
+  --navy: #0d1e38;
+  --navy-soft: #14315c;
+  --blue: #5b9be6;
+  --blue-bright: #7db9f2;
+  --green: #25d366;
+  --bg: #0b1424;
+  --surface: #121f36;
+  --text: #dbe6f5;
+  --heading: #e7eefb;
+  --muted: #93a7c4;
+  --border: #24395c;
+  --shadow: 0 16px 40px rgb(0 0 0 / 45%);
+  color-scheme: dark;
+}
+
+/* Fundos que eram brancos fixos passam a ser escuros */
+[data-theme='dark'] .header {
+  background: rgb(15 25 45 / 92%);
+}
+
+[data-theme='dark'] .menu-toggle {
+  background: var(--surface);
+}
+
+[data-theme='dark'] .nav {
+  background: #101d33;
+  box-shadow: 0 20px 30px rgb(0 0 0 / 40%);
+}
+
+[data-theme='dark'] .section-alt {
+  background: linear-gradient(180deg, #0d1728 0%, var(--bg) 100%);
+}
+
+[data-theme='dark'] .carousel-nav {
+  background: #16233d;
+  box-shadow: 0 6px 16px rgb(0 0 0 / 35%);
+}
+
+[data-theme='dark'] .carousel-bullet {
+  background: #3a5078;
+}
+
+[data-theme='dark'] .quote-form {
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+[data-theme='dark'] .quote-form-field input,
+[data-theme='dark'] .quote-form-field textarea {
+  background: rgb(255 255 255 / 5%);
+  border-color: rgb(255 255 255 / 16%);
+}
+
+[data-theme='dark'] .admin-field input {
+  background: #0e1a2f;
+}
+
+[data-theme='dark'] .login-modal {
+  background: #121f36;
+  border: 1px solid var(--border);
+}
+
+[data-theme='dark'] .policy-modal {
+  background: rgb(18 31 54 / 96%);
+  color: var(--text);
+}
+
+[data-theme='dark'] .policy-modal .policy-content p,
+[data-theme='dark'] .policy-modal .policy-content li,
+[data-theme='dark'] .policy-modal .policy-content strong {
+  color: var(--text);
+}
+
+[data-theme='dark'] .policy-modal-head,
+[data-theme='dark'] .policy-modal-foot {
+  border-color: rgb(255 255 255 / 12%);
+}
+
+[data-theme='dark'] .policy-close {
+  background: rgb(255 255 255 / 12%);
+}
+
+[data-theme='dark'] .policy-close:hover {
+  background: rgb(255 255 255 / 22%);
+}
+
+[data-theme='dark'] .eyebrow {
+  background: rgb(125 185 242 / 14%);
+}
+
+[data-theme='dark'] .about-content blockquote {
+  background: rgb(125 185 242 / 10%);
+}
+
+/* Botões que usam azul como fundo mantêm contraste no escuro */
+[data-theme='dark'] .btn-primary,
+[data-theme='dark'] .service-number {
+  background: #2f6cbd;
+  color: #fff;
+}
+
+[data-theme='dark'] .btn-primary:hover {
+  background: #3d82cf;
+}
+
+[data-theme='dark'] .nav-login:hover {
+  background: #2f6cbd;
+  border-color: #2f6cbd;
+  color: #fff;
+}
+
+[data-theme='dark'] .carousel-nav:hover {
+  background: #2f6cbd;
+}
+
+[data-theme='dark'] .ad-banner .ad-label {
+  color: rgb(255 255 255 / 45%);
+}
+
+[data-theme='dark'] .quote-form-ok {
+  color: #4ade80;
+}
+
+[data-theme='dark'] .quote-form-erro,
+[data-theme='dark'] .admin-erro {
+  color: #f87171;
+}
+
+[data-theme='dark'] .check-list li::before {
+  color: #4ade80;
 }
