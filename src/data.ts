@@ -7,7 +7,7 @@ export const FACEBOOK_URL = 'https://www.facebook.com/profile.php?id=10006359476
 // Para ATIVAR os anúncios, cole o seu ID do AdSense abaixo
 // (ex.: 'ca-pub-1234567890123456'). Enquanto estiver vazio,
 // nenhum script de anúncios é carregado e o site fica inalterado.
-export const ADSENSE_CLIENT = '';
+export const ADSENSE_CLIENT = 'ca-pub-6926625433315733';
 
 // IDs dos blocos de anúncio criados no painel do AdSense (data-ad-slot).
 // Preencha apenas os que você criar; os demais ficam desligados.

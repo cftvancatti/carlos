@@ -1,8 +1,1 @@
-# ============================================================
-# ads.txt — Autorização para venda de anúncios em nome do site
-# ============================================================
-# INSTRUÇÕES: quando o Google AdSense aprovar sua conta, descomente
-# (remova o "#" da linha abaixo), troque pub-XXXXXXXXXXXXXXXX pelo
-# SEU ID de publicador e remova estas instruções.
-#
-# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+google.com, pub-6926625433315733, DIRECT, f08c47fec0942fa0
