@@ -149,6 +149,11 @@ p {
   padding: 14px 0;
 }
 
+/* No mobile o botão de tema fica ao lado da logo */
+.theme-toggle-mobile {
+  display: none;
+}
+
 .brand {
   display: flex;
   align-items: center;
@@ -1040,6 +1045,17 @@ p {
 @media (max-width: 880px) {
   .menu-toggle {
     display: flex;
+    order: 2;
+    margin-left: auto;
+  }
+
+  .theme-toggle-mobile {
+    display: inline-flex;
+    order: 1;
+  }
+
+  .brand {
+    order: 0;
   }
 
   .nav {
@@ -1055,6 +1071,11 @@ p {
     border: 1px solid var(--border);
     border-radius: 16px;
     box-shadow: var(--shadow);
+    display: none;
+  }
+
+  /* No mobile o tema é alternado pelo botão ao lado da logo */
+  .nav .theme-toggle {
     display: none;
   }
 
