@@ -1,4 +1,5 @@
-import { ADVANTAGES, APPLICATIONS, WHATSAPP_URL } from '../data';
+import { ADVANTAGES, APPLICATIONS, SERVICES, WHATSAPP_URL } from '../data';
+import { Carousel } from '../components/Carousel';
 
 export function Servicos() {
   return (
@@ -8,19 +9,30 @@ export function Servicos() {
           <span className="eyebrow">Serviços</span>
           <h1>Soluções completas em segurança eletrônica</h1>
           <p>
-            Projetos sob medida em CFTV, controle de acesso e automação, com instalação
+            Projetos sob medida em segurança eletrônica, controle de acesso e automação, com instalação
             profissional e suporte técnico especializado.
           </p>
-          <div className="hero-actions">
-            <a
-              href={WHATSAPP_URL}
-              className="btn btn-primary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Solicitar um orçamento
-            </a>
+        </div>
+      </section>
+
+      <section className="section" id="servicos-lista">
+        <div className="container">
+          <div className="section-head">
+            <span className="eyebrow">Nossos serviços</span>
+            <h2>Tecnologia de ponta em segurança eletrônica</h2>
           </div>
+          <Carousel
+            className="carousel-services"
+            label="Serviços"
+            perViewDesktop={4}
+            items={SERVICES.map((service) => (
+              <article className="service-card" key={service.number}>
+                <span className="service-number">{service.number}</span>
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+              </article>
+            ))}
+          />
         </div>
       </section>
 
@@ -54,7 +66,7 @@ export function Servicos() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Solicitar um orçamento
+              Contratar agora !
             </a>
           </div>
           <div className="split-media">
@@ -81,7 +93,7 @@ export function Servicos() {
             </p>
           </div>
           <div className="split-media">
-            <img src="img/cftv.jpg" alt="Instalação de câmeras CFTV" />
+            <img src="img/cftv.png" alt="Instalação de câmeras CFTV" />
           </div>
         </div>
       </section>

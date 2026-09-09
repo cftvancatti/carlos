@@ -1,5 +1,5 @@
 import { useEffect, useState, type MouseEvent } from 'react';
-import { PHONE_DISPLAY, INSTAGRAM_URL, FACEBOOK_URL } from '../data';
+import { PHONE_DISPLAY, WHATSAPP_URL } from '../data';
 
 interface HeaderProps {
   route: string;
@@ -45,27 +45,12 @@ export function Header({ route, onNavigate }: HeaderProps) {
             Serviços
           </a>
           <a
-            href={INSTAGRAM_URL}
-            className="nav-link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Instagram
-          </a>
-          <a
-            href={FACEBOOK_URL}
-            className="nav-link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Facebook
-          </a>
-          <a
-            href="#/servicos"
+            href={WHATSAPP_URL}
             className="btn btn-primary btn-sm nav-cta"
-            onClick={go('#/servicos')}
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Solicitar orçamento
+            Contratar agora !
           </a>
         </nav>
 

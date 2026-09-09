@@ -1,11 +1,9 @@
 import { useEffect, useState } from 'react';
 import {
   ROTATING_WORDS,
-  SERVICES,
   WHATSAPP_URL,
   INSTAGRAM_URL,
 } from '../data';
-import { Carousel } from '../components/Carousel';
 import { Testimonials } from '../components/Testimonials';
 
 export function Home() {
@@ -22,7 +20,6 @@ export function Home() {
     <>
       <section className="hero">
         <div className="container hero-inner">
-          <span className="eyebrow">12 anos de experiência</span>
           <h1>
             Controle de acesso para{' '}
             <span className="highlight">empresas, condomínios e residências</span>
@@ -30,7 +27,7 @@ export function Home() {
           <p className="hero-sub">
             Soluções para segurança eletrônica:{' '}
             <span className="rotating-word" key={wordIndex}>
-              {ROTATING_WORDS[wordIndex]}
+              {ROTATING_WORDS[wordIndex].toUpperCase()}
             </span>
           </p>
           <p className="hero-copy">
@@ -44,33 +41,9 @@ export function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Solicitar um orçamento
-            </a>
-            <a href="#/servicos" className="btn btn-ghost">
-              Ver serviços
+              Contratar agora !
             </a>
           </div>
-        </div>
-      </section>
-
-      <section className="section" id="servicos">
-        <div className="container">
-          <div className="section-head">
-            <span className="eyebrow">Nossos serviços</span>
-            <h2>Tecnologia de ponta em segurança eletrônica</h2>
-          </div>
-          <Carousel
-            className="carousel-services"
-            label="Serviços"
-            perViewDesktop={4}
-            items={SERVICES.map((service) => (
-              <article className="service-card" key={service.number}>
-                <span className="service-number">{service.number}</span>
-                <h3>{service.title}</h3>
-                <p>{service.description}</p>
-              </article>
-            ))}
-          />
         </div>
       </section>
 
@@ -82,7 +55,7 @@ export function Home() {
           <div className="about-content">
             <span className="eyebrow">CFTV e segurança eletrônica em geral</span>
             <h2>
-              <strong>Carlos Instalador</strong> — 12 anos de experiência
+              <strong>Carlos Instalador</strong> — 14 anos de experiência
             </h2>
             <p>
               Localizada no Rio de Janeiro, a Carlos Instalador Segurança Eletrônica nasceu para
@@ -106,7 +79,7 @@ export function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Solicitar um orçamento
+              Contratar agora !
             </a>
           </div>
         </div>
