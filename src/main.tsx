@@ -7,6 +7,7 @@ import { FloatingContact } from './components/FloatingContact';
 import { Home } from './pages/Home';
 import { Servicos } from './pages/Servicos';
 import { Privacidade } from './pages/Privacidade';
+import { Admin } from './pages/Admin';
 import { ADSENSE_CLIENT, POLICY_ACCEPT_KEY } from './data';
 
 function getRoute(): string {
@@ -57,6 +58,8 @@ function App() {
           <Servicos />
         ) : route === '#/privacidade' ? (
           <Privacidade />
+        ) : route === '#/admin' ? (
+          <Admin />
         ) : (
           <Home />
         )}
