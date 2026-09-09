@@ -46,3 +46,30 @@ export function fetchServices(): Promise<ServiceRow[] | null> {
 export function fetchTestimonials(): Promise<TestimonialRow[] | null> {
   return fetchTable<TestimonialRow>('testimonials');
 }
+
+export interface LeadInput {
+  name: string;
+  phone: string;
+  message?: string;
+}
+
+/**
+ * Registra uma solicitação de orçamento na tabela `leads`.
+ * Retorna true quando gravado com sucesso.
+ */
+export async function createLead(lead: LeadInput): Promise<boolean> {
+  try {
+    const response = await fetch(`${SUPABASE_URL}/rest/v1/leads`, {
+      method: 'POST',
+      headers: {
+        ...headers,
+        'Content-Type': 'application/json',
+        Prefer: 'return=minimal',
+      },
+      body: JSON.stringify({ ...lead, source: 'site' }),
+    });
+    return response.status === 201;
+  } catch {
+    return false;
+  }
+}

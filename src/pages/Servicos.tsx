@@ -3,6 +3,7 @@ import { ADVANTAGES, APPLICATIONS, SERVICES, WHATSAPP_URL, ADSENSE_SLOTS, type S
 import { Carousel } from '../components/Carousel';
 import { AdBanner } from '../components/AdBanner';
 import { fetchServices, type ServiceRow } from '../supabase';
+import { QuoteForm } from '../components/QuoteForm';
 
 export function Servicos() {
   const [services, setServices] = useState<Service[] | null>(null);
@@ -153,6 +154,20 @@ export function Servicos() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="section section-alt" id="orcamento">
+        <div className="container quote-grid">
+          <div className="quote-intro">
+            <span className="eyebrow">Orçamento sem compromisso</span>
+            <h2>Solicite um orçamento</h2>
+            <p>
+              Descreva o serviço desejado e receba uma proposta personalizada com instalação
+              profissional e suporte técnico especializado.
+            </p>
+          </div>
+          <QuoteForm />
         </div>
       </section>
 

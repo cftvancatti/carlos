@@ -7,6 +7,7 @@ import {
 } from '../data';
 import { Testimonials } from '../components/Testimonials';
 import { AdBanner } from '../components/AdBanner';
+import { QuoteForm } from '../components/QuoteForm';
 
 export function Home() {
   const [wordIndex, setWordIndex] = useState(0);
@@ -139,6 +140,25 @@ export function Home() {
             </a>
             .
           </p>
+        </div>
+      </section>
+
+      <section className="section section-alt" id="orcamento">
+        <div className="container quote-grid">
+          <div className="quote-intro">
+            <span className="eyebrow">Orçamento sem compromisso</span>
+            <h2>Solicite um orçamento</h2>
+            <p>
+              Conte o que você precisa e receba uma proposta personalizada. Atendemos
+              empresas, condomínios e residências no Rio de Janeiro.
+            </p>
+            <ul className="check-list">
+              <li>Resposta rápida pelo WhatsApp</li>
+              <li>Visita técnica com horário agendado</li>
+              <li>Projetos sob medida para cada cliente</li>
+            </ul>
+          </div>
+          <QuoteForm />
         </div>
       </section>
     </>

@@ -695,6 +695,105 @@ p {
   border-top: 1px solid rgb(20 36 61 / 12%);
 }
 
+/* ---------- Quote form ---------- */
+
+.quote-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: clamp(28px, 5vw, 64px);
+  align-items: start;
+}
+
+.quote-intro h2 {
+  margin-top: 12px;
+}
+
+.quote-intro .check-list {
+  margin-top: 16px;
+}
+
+.quote-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: clamp(20px, 3vw, 32px);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.quote-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.quote-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.quote-form-field label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.quote-form-field input,
+.quote-form-field textarea {
+  padding: 12px 14px;
+  border: 1px solid rgb(20 36 61 / 18%);
+  border-radius: 10px;
+  font: inherit;
+  color: var(--text);
+  background: rgb(20 36 61 / 3%);
+  resize: vertical;
+}
+
+.quote-form-field input:focus,
+.quote-form-field textarea:focus {
+  outline: 2px solid var(--blue);
+  outline-offset: 1px;
+  border-color: transparent;
+}
+
+.quote-form-foot {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.quote-form-msg {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.quote-form-ok {
+  color: #1a7f37;
+}
+
+.quote-form-erro {
+  color: #b42318;
+}
+
+.quote-form .btn[disabled] {
+  opacity: 0.65;
+  cursor: progress;
+}
+
+@media (max-width: 860px) {
+  .quote-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quote-form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ---------- AdSense ---------- */
 
 .ad-banner {
