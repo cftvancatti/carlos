@@ -58,23 +58,6 @@ export function Header({ route, onNavigate }: HeaderProps) {
         </a>
 
         <nav className={`nav ${menuOpen ? 'nav-open' : ''}`} aria-label="Menu principal">
-          <a
-            href="#/"
-            className={`nav-link ${route === '#/' ? 'nav-link-active' : ''}`}
-            onClick={go('#/')}
-          >
-            Início
-          </a>
-          <a
-            href="#/servicos"
-            className={`nav-link ${route === '#/servicos' ? 'nav-link-active' : ''}`}
-            onClick={go('#/servicos')}
-          >
-            Serviços
-          </a>
-          <button type="button" className="nav-login" onClick={abrirLogin}>
-            Login
-          </button>
           <button
             type="button"
             className="theme-toggle"
@@ -92,6 +75,23 @@ export function Header({ route, onNavigate }: HeaderProps) {
                 <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
               </svg>
             )}
+          </button>
+          <a
+            href="#/"
+            className={`nav-link ${route === '#/' ? 'nav-link-active' : ''}`}
+            onClick={go('#/')}
+          >
+            Início
+          </a>
+          <a
+            href="#/servicos"
+            className={`nav-link ${route === '#/servicos' ? 'nav-link-active' : ''}`}
+            onClick={go('#/servicos')}
+          >
+            Serviços
+          </a>
+          <button type="button" className="nav-login" onClick={abrirLogin}>
+            Login
           </button>
           <a
             href={WHATSAPP_URL}
