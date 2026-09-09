@@ -150,7 +150,7 @@ p {
 }
 
 /* No mobile o botão de tema fica ao lado da logo */
-.theme-toggle-mobile {
+.theme-toggle.theme-toggle-mobile {
   display: none;
 }
 
@@ -1049,7 +1049,7 @@ p {
     margin-left: auto;
   }
 
-  .theme-toggle-mobile {
+  .theme-toggle.theme-toggle-mobile {
     display: inline-flex;
     order: 1;
   }
