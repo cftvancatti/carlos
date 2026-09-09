@@ -603,6 +603,98 @@ p {
   font-style: italic;
 }
 
+/* ---------- Privacy policy modal ---------- */
+
+.policy-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(16px, 4vw, 48px);
+  background: rgb(10 18 32 / 65%);
+  backdrop-filter: blur(4px);
+}
+
+.policy-modal {
+  display: flex;
+  flex-direction: column;
+  width: min(720px, 100%);
+  max-height: min(82vh, 720px);
+  border-radius: 20px;
+  color: #1c2a45;
+  background: rgb(255 255 255 / 92%);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 24px 64px rgb(10 18 32 / 35%);
+  overflow: hidden;
+}
+
+.policy-modal .policy-content p,
+.policy-modal .policy-content li,
+.policy-modal .policy-content strong {
+  color: #1c2a45;
+}
+
+.policy-modal .policy-content a {
+  color: var(--blue);
+}
+
+.policy-modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 24px;
+  border-bottom: 1px solid rgb(20 36 61 / 12%);
+}
+
+.policy-modal-head h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--navy);
+}
+
+.policy-close {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--navy);
+  background: rgb(20 36 61 / 8%);
+  cursor: pointer;
+}
+
+.policy-close:hover {
+  background: rgb(20 36 61 / 16%);
+}
+
+.policy-modal-body {
+  flex: 1;
+  padding: 20px 24px;
+  overflow-y: auto;
+}
+
+.policy-modal-body h2 {
+  margin-top: 1.4rem;
+}
+
+.policy-modal-body .policy-updated {
+  margin-top: 1.5rem;
+}
+
+.policy-modal-foot {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 14px 24px;
+  border-top: 1px solid rgb(20 36 61 / 12%);
+}
+
 /* ---------- Split layouts ---------- */
 
 .split-grid {
