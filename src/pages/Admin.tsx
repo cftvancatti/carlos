@@ -52,6 +52,8 @@ export function Admin() {
     setAdminSession(null);
     setSession(null);
     setLeads([]);
+    // Volta para a página Início após sair.
+    window.location.hash = '#/';
   };
 
   const atualizar = async () => {
