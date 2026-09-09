@@ -575,6 +575,34 @@ p {
   max-width: 60ch;
 }
 
+/* ---------- Policy pages ---------- */
+
+.policy-content {
+  max-width: 800px;
+  line-height: 1.75;
+}
+
+.policy-content h2 {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  color: var(--navy);
+}
+
+.policy-content ul {
+  padding-left: 1.25rem;
+}
+
+.policy-content a {
+  color: var(--blue);
+}
+
+.policy-updated {
+  margin-top: 2.5rem;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
 /* ---------- Split layouts ---------- */
 
 .split-grid {

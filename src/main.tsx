@@ -6,6 +6,7 @@ import { Footer } from './components/Footer';
 import { FloatingContact } from './components/FloatingContact';
 import { Home } from './pages/Home';
 import { Servicos } from './pages/Servicos';
+import { Privacidade } from './pages/Privacidade';
 
 function getRoute(): string {
   return window.location.hash || '#/';
@@ -26,7 +27,15 @@ function App() {
   return (
     <div className="app">
       <Header route={route} onNavigate={setRoute} />
-      <main>{route === '#/servicos' ? <Servicos /> : <Home />}</main>
+      <main>
+        {route === '#/servicos' ? (
+          <Servicos />
+        ) : route === '#/privacidade' ? (
+          <Privacidade />
+        ) : (
+          <Home />
+        )}
+      </main>
       <Footer />
       <FloatingContact />
     </div>

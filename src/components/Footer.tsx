@@ -15,6 +15,7 @@ export function Footer() {
           <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">
             Instagram
           </a>
+          <a href="#/privacidade">Política de Privacidade</a>
         </div>
       </div>
       <div className="container footer-copy">
