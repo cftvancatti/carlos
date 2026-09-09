@@ -183,23 +183,34 @@ p {
 .nav {
   display: flex;
   align-items: center;
-  gap: 26px;
+  gap: 18px;
+  padding: 8px 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  box-shadow: 0 6px 18px rgb(11 31 58 / 6%);
 }
 
 .nav-link {
+  padding: 6px 10px;
+  border-radius: 999px;
   color: var(--text);
   text-decoration: none;
   font-weight: 600;
   font-size: 0.95rem;
-  transition: color 0.2s ease;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
 }
 
 .nav-link:hover {
   color: var(--blue-bright);
+  background: rgb(46 127 214 / 8%);
 }
 
 .nav-link-active {
   color: var(--blue-bright);
+  background: rgb(46 127 214 / 8%);
 }
 
 .nav-cta {
