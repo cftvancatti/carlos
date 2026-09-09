@@ -3,6 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Aplica o tema salvo (claro/escuro) antes da página carregar.
+      try {
+        if (localStorage.getItem('tema') === 'escuro') {
+          document.documentElement.dataset.theme = 'dark';
+        }
+      } catch (e) {}
+    </script>
     <meta
       name="description"
       content="Carlos Instalador é especialista em controle de acesso e segurança eletrônica, oferecendo tecnologia confiável para empresas, condomínios e residências no Rio de Janeiro."
@@ -30,8 +38,8 @@
       crossorigin="anonymous"
     ></script>
     <link rel="icon" type="image/jpeg" href="img/logo.jpg" />
-    <script type="module" crossorigin src="./assets/index-oJB5Ch88.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-4FQ-7qJr.css">
+    <script type="module" crossorigin src="./assets/index-BcSJMvc0.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CZWvFVMm.css">
   </head>
   <body>
     <div id="root"></div>
