@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cftvancatti.github.io/carlos/sitemap.xml
+Sitemap: https://carlosinstalador.com.br/sitemap.xml
